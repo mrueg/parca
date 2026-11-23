@@ -46,7 +46,7 @@ RUN go build -trimpath -o parca ./cmd/parca
 RUN go install github.com/grpc-ecosystem/grpc-health-probe@latest
 
 # this image is what docker.io/alpine:3.14.1 on August 13 2021
-FROM docker.io/alpine@sha256:be9bdc0ef8e96dbc428dc189b31e2e3b05523d96d12ed627c37aa2936653258c
+FROM docker.io/alpine@sha256:f59abe656b692d901e184be3445e084786602108599d2a51d229c0f5a48c71bf
 
 USER nobody
 
