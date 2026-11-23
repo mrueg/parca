@@ -22,7 +22,7 @@ COPY --from=ui-deps /app/node_modules ./node_modules
 RUN yarn workspace @parca/web build
 
 # this image is what docker.io/golang:1.16.7-alpine3.14 on August 12 2021
-FROM docker.io/golang@sha256:7e31a85c5b182e446c9e0e6fba57c522902f281a6a5a6cbd25afa17ac48a6b85 as builder
+FROM docker.io/golang@sha256:205c7636d74e0ffbe3d007162df7d74f859f5a8c8322dfb9f907977686c126cf as builder
 RUN mkdir /.cache && chown nobody:nogroup /.cache && touch -t 202101010000.00 /.cache
 
 ENV CGO_ENABLED=0
