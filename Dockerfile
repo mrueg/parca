@@ -1,5 +1,5 @@
 # this image is what node:16.6.1-alpine3.14 is on August 12 2021
-FROM docker.io/library/node@sha256:456ff86826c47703a7d9b1cbd04b80038e57b86efa4516931148151b379ba035 AS ui-deps
+FROM docker.io/library/node@sha256:e18c3ccdf7d71619990b0e85639f506e2028a95410999cab24cc373cbd10e0ac AS ui-deps
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ RUN yarn workspace @parca/web install --frozen-lockfile
 
 # Rebuild the source code only when needed
 # this image is what node:16.6.1-alpine3.14 is on August 12 2021
-FROM docker.io/library/node@sha256:456ff86826c47703a7d9b1cbd04b80038e57b86efa4516931148151b379ba035 AS ui-builder
+FROM docker.io/library/node@sha256:e18c3ccdf7d71619990b0e85639f506e2028a95410999cab24cc373cbd10e0ac AS ui-builder
 
 ENV NODE_ENV production
 ENV CIRCLE_NODE_TOTAL 1
